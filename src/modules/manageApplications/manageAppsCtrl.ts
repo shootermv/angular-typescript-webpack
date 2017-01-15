@@ -6,7 +6,7 @@ export class ManageApplicationsCtrl {
     
     constructor(public getMetaData:any, public manageApplicationsService:ManageApplicationsService){
       this.containerMetadata = this.getMetaData.data.containers;
-      console.log(this.containerMetadata)
+      //console.log(this.containerMetadata)
     }
 
 

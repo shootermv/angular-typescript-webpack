@@ -1,6 +1,7 @@
 @import './_icomoon';
 @import './_mixins';
 @import './_mixins-dialog';
+@import './_test-group-dialog';
 body{
   margin-top: 50px;
 }
@@ -305,39 +306,5 @@ $provisioningPageMargin: 0 18px;
                 }
             }
         }
-    }
-}
-.bulkRollout {
-    @include dialog();
-    > div {
-        width: 600px !important;
-        height: 251px !important;
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-
-            h1 {
-                display: flex;
-                order: 1;
-                font-weight: bold;
-                margin: 0;
-            }
-            .closeBtn {
-                display: flex;
-                order: 2;
-                position: relative;
-                right: 0;
-                top: 0;
-                padding: 0;
-                margin: 0;
-            }
-        }
-    }
-    .bulkRolloutButtons {
-        position: absolute;
-        bottom: 25px;
-        right: 40px;
     }
 }

@@ -20,7 +20,11 @@
         public getMetaData():IPromise<any> {
             return this.$http.get('/api/appView/appTree');
         }
-
-
+        public loadAccountTestGroup() :IPromise<any>{          
+          return this.$http.get('/api/testGroups/testGroup?accountId=' + 1);
+        }
+        public findBySearchCriteria():IPromise<any>{
+          return  this.$http.get('/api/testGroups/findBySearchCriteria?accountId=' + 1+'&query=&saId=14'); 
+        }
     }
 
