@@ -1,3 +1,6 @@
+@import './_icomoon';
+@import './_mixins';
+@import './_mixins-dialog';
 body{
   margin-top: 50px;
 }
@@ -96,4 +99,245 @@ dp-star{
 }
 textarea {
   resize: none;
+}
+
+
+
+button:active { //TODO move to common when outside of branch
+    text-shadow: none;
+}
+
+$provisioningPageMargin: 0 18px;
+.adminPage {
+    background: #ececec;
+    width: 100%;
+    height: 100%;
+    input[type=text], input[type=search] {
+        height: 26px;
+        border: solid 1px #95a5a6;
+        line-height: 26px;
+        box-sizing: border-box;
+    }
+
+    header {
+        position: relative;
+        height: 60px;
+        border-bottom: 1px solid #c7c7c7;
+        color: #40454f;
+        padding: 0 18px;
+        background: #fff;
+        width: 100%;
+        //display: inline-flex;
+        i {
+            line-height: 60px;
+            padding: 0;
+            font-size: 10px;
+            margin: 0 13px;
+            color: #b6b9b8;
+        }
+        //justify-content: flex-start;
+        span {
+            font-size: 18px;
+            line-height: 60px;
+        }
+        .back {
+            color: #2980bf;
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                color: #3498DB;
+            }
+        }
+        .right-menu {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            display: flex;
+            input[type="search"] {
+                padding: 0 10px;
+                width: 290px;
+                margin-left: 10px;
+            }
+        }
+        //justify-content: space-between;
+    }
+
+    .tableContainer {
+        padding: $provisioningPageMargin;
+        background: #ececec;
+        .headerButtons {
+            min-height: 18px;
+            clear: both;
+            padding: 20px 0 10px 0;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                border-radius: 2px;
+                padding: 0 13px;
+                font-size: 12px;
+                line-height: 26px;
+                box-sizing: border-box;
+            }
+            > button {
+                border: 1px solid #d8d8d8;
+                background: #f5f5f5;
+                color: #40454f;
+                &:before {
+                    font-size: 12px;
+                    padding: 0 4px 0 0;
+                    color: #555c5b;
+                }
+                &:hover {
+                    background: #fff;
+                    color: #f57b20;
+                }
+                &:hover:before, &:active:before {
+                    color: #f57b20;
+                }
+            }
+            .leftHeaderContainer {
+                order: 1;
+                display: flex;
+                > button {
+                    margin-right: 10px;
+
+                    border: 1px solid #d8d8d8;
+                    background: #f5f5f5;
+                    color: #40454f;
+                    &:before {
+                        font-size: 12px;
+                        padding: 0 4px 0 0;
+                        color: #555c5b;
+                    }
+                    &:hover {
+                        background: #fff;
+                        color: #f57b20;
+                    }
+                    &:hover:before, &:active:before {
+                        color: #f57b20;
+                    }
+                }
+            }
+            .rightHeaderContainer {
+                order: 2;
+                display: flex;
+                > button {
+                    background: #2980bf;
+                    border: none;
+                    color: #fff;
+                    margin-right: 10px;
+                    &:hover {
+                        background: #4c638d;
+                    }
+                    &:hover:before, &:active:before {
+                        color: #fff;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                .verticalLine {
+                    height: 100%;
+                    border-left: solid 1px #d8d8d8;
+                    margin-right: 10px;
+                }
+            }
+        }
+   
+        table {
+            width: 100%;
+            border: solid 1px #d8d8d8;
+            background: #fff;
+            border-collapse: collapse;
+            tr {
+                border-bottom: 1px solid #ececec;
+                height: 38px;
+                &.disabled {
+                    color: #c0c0c0;
+                    background: #fcfcfc;
+                }
+                &:hover {
+                    background: #eaf0f6;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                td, th {
+                    font-size: 12px;
+                    padding: 0 25px;
+                    text-align: left;
+                }
+                .clickableLink {
+                    cursor: pointer;
+                    color: #2395b8;
+                    text-decoration: none;
+                    &:hover {
+                        color: #0d558f;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            thead {
+                $tableHeadBg: #f5f5f5;
+                background: $tableHeadBg;
+                border-bottom: 1px solid #ececec;
+                font-weight: bold;
+                color: #545B5B;
+                span {
+                    color: #545B5B;
+                    font-size: 12px;
+                    &:hover {
+                        color: #545B5B;
+                    }
+                }
+                tr:hover {
+                    background: $tableHeadBg;
+                }
+                sort-header-cmp {
+                    a {
+                        text-decoration: none;
+                        color: #545B5B;
+                        &:hover {
+                            color: #2395b8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.bulkRollout {
+    @include dialog();
+    > div {
+        width: 600px !important;
+        height: 251px !important;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+
+            h1 {
+                display: flex;
+                order: 1;
+                font-weight: bold;
+                margin: 0;
+            }
+            .closeBtn {
+                display: flex;
+                order: 2;
+                position: relative;
+                right: 0;
+                top: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    .bulkRolloutButtons {
+        position: absolute;
+        bottom: 25px;
+        right: 40px;
+    }
 }

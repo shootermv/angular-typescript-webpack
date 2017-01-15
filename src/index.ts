@@ -1,4 +1,5 @@
 import "./modules/application/angular/index";
+import "./modules/manageApplications/index";
 import "./modules/tweets/angular/index";
 import "./modules/about/angular/index";
 import * as angular from "angular";
@@ -8,7 +9,7 @@ import "font-awesome/css/font-awesome.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles/screen.scss";
 
-angular.module("app", ["app.application", "app.tweets", "app.about"]);
+angular.module("app", ["app.application", "app.tweets", "app.about", "app.manageApplications"]);
 angular.bootstrap(document, ["app"], {
     strictDi: true
 });

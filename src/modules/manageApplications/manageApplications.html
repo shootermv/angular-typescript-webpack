@@ -1,0 +1,53 @@
+<div class="adminPage manageApplications">
+    <header>
+        <span>Managed Applications</span>
+    </header>
+
+
+    <section class="tableContainer">
+        <div class="headerButtons">
+            <div class="leftHeaderContainer">
+                <context-menu-applications show-context-item="$ctrl.showContextItem"></context-menu-applications>
+            </div>
+            <div class="rightHeaderContainer">
+                <add-application-menu show-context-item="$ctrl.showAddApplicationMenu"></add-application-menu>
+            </div>
+        </div>
+
+
+
+       <table>
+            <thead>
+            <tr>
+                <td><i class="clickable"
+                       ng-class="{checkbox_checked:$ctrl.allSelected,checkbox_empty:!$ctrl.allSelected}"
+                       ng-click="$ctrl.checkUncheckApplications()"></i></td>
+                <td>Type</td>
+                <td>Application Name</td>
+                <td>Process Name/URL</td>
+                <td>Rollout</td>
+                <td>Users</td>
+                <td>Activities</td>
+                <td>Last Modified</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="container in $ctrl.containerMetadata track by $index"
+                ng-class="{containerDisabled: container.enabled === 0}">
+                <td><i class="clickable"
+                       ng-class="{checkbox_checked:container.checked,checkbox_empty:!container.checked}"
+                       ng-click="$ctrl.checkUncheckOneApplication(container)"></i></td>
+                <td><i class="{{$ctrl.types[container.type - 1]}}"></i></td>
+                <td ng-bind="container.appName"></td>
+                <td ng-bind="$ctrl.identifiers[$index]"></td>
+                <td ng-bind="$ctrl.rollouts[container.rollout - 1]"></td>
+                <td ng-bind="container.users"></td>
+                <td ng-bind="container.activities"></td>
+                <td ng-bind="container.lastModified | date:'dd MMM, yyyy'"></td>
+            </tr>
+            </tbody>
+        </table>
+                
+   </section>
+   <test-group show-test-group="true"></test-group>
+</div>

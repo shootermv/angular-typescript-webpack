@@ -1,0 +1,794 @@
+$dots: "\e20f";
+$lm-arrow-up: "\e630";
+$lm-arrow-down: "\e631";
+$lm-globus: "\e632";
+$lm-cloud-download: "\e633";
+$lm-cloud-upload: "\e634";
+$location-mapping-icon: "\e635";
+$icon_check: "\e636";
+$warning: "\e637";
+$lm-cloud-upload-outline: "\e638";
+$lm-drop-file: "\e639";
+$send: "\e600";
+$arrow-down: "\e601";
+$home: "\e602";
+$user: "\e603";
+$cog-wheel: "\e604";
+$info-ico: "\e605";
+$publish-icon: "\e606";
+$search: "\e607";
+$sort-descending: "\e608";
+$sort-ascending: "\e609";
+$type-desktop: "\e60a";
+$type-web: "\e60b";
+$type-mobile: "\e60c";
+$loading: "\e60d";
+$rollout-all: "\e60e";
+$rollout-test: "\e60f";
+$rollout-mixed: "\e610";
+$pause: "\e611";
+$start: "\e612";
+$filter: "\e613";
+$stop: "\e614";
+$monitored-application: "\e615";
+$add-btn: "\e616";
+$more-info: "\e617";
+$tick: "\e618";
+$close-btn: "\e619";
+$arrow-left: "\e61a";
+$arrow-right: "\e61b";
+$sign: "\e61c";
+$circle-plus: "\e61d";
+$warning2: "\e61e";
+$edit-ico: "\e61f";
+$icon-chrome: "\e620";
+$icon-download: "\e621";
+$icon-ie: "\e622";
+$icon-mozila: "\e623";
+$icon-pencil: "\e624";
+$icon-question-mark: "\e625";
+$icon-upload: "\e626";
+$icon-wrench: "\e627";
+$icon-android: "\e628";
+$icon-apple: "\e629";
+$icon-cross-bold: "\e62a";
+$um-domain-user: "\e62b";
+$um-edit-user: "\e62c";
+$um-local-user: "\e62d";
+$um-lock: "\e62e";
+$um-user-management: "\e62f";
+$Analyze_black: "\e63a";
+$Dashboards_black: "\e63b";
+$Inventory_black: "\e63c";
+$Monitor_black: "\e63d";
+$Reports_black: "\e63e";
+$Troubleshoot_black: "\e63f";
+$Validate_black: "\e640";
+$delete: "\e641";
+$edit: "\e642";
+$endpoint: "\e643";
+$help: "\e644";
+$incidents: "\e645";
+$menu: "\e646";
+$popout: "\e647";
+$user2: "\e648";
+$save: "\e649";
+$search2: "\e64a";
+$homepage: "\e64b";
+$settings: "\e64c";
+$view: "\e64d";
+$checkbox_empty: "\e926";
+$checkbox_checked: "\e927";
+$attention: "\e928";
+$icomoon-refresh: "\e929";
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon/icomoon.eot');
+    src: url('fonts/icomoon/icomoon.eot') format('embedded-opentype'),
+    url('fonts/icomoon/icomoon.woff2') format('woff2'),
+    url('fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon/icomoon.woff') format('woff'),
+    url('fonts/icomoon/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin awesome {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+@mixin icon {
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-empty-icon:before {
+    @include icon();
+    content: "\e932";
+}
+
+.icon-Mac_Laptop:before {
+    @include icon();
+    content: "\e933";
+}
+
+.icon-Mac_Desktop:before {
+    @include icon();
+    content: "\e934";
+}
+
+.icon-dashboard-icon-arrow-down:before {
+    @include icon();
+    content: "\e92b";
+}
+
+.icon-dashboard-icon-arrow-up:before {
+    @include icon();
+    content: "\e92c";
+}
+
+.icon-dashboard-icon-circle:before {
+    @include icon();
+    content: "\e92d";
+}
+
+.icon-dashboard-icon-exclamation-circle:before {
+    @include icon();
+    content: "\e92e";
+}
+
+.icon-dashboard-icon-info-circle:before {
+    @include icon();
+    content: "\e92f";
+}
+
+.icon-aternity-icon-edit:before {
+    @include icon();
+    content: "\e91e";
+}
+
+.icon-aternity-icon-share:before {
+    @include icon();
+    content: "\e91f";
+}
+
+.icon-aternity-icon-trash:before {
+    @include icon();
+    content: "\e920";
+}
+
+.icon-aternity-icon-arrow:before {
+    @include icon();
+    content: "\e921";
+}
+
+.icon-aternity-icon-minus:before {
+    @include icon();
+    content: "\e922";
+}
+
+.icon-aternity-icon-plus:before {
+    @include icon();
+    content: "\e923";
+}
+
+.icon-star-full:before {
+    @include icon();
+    content: "\e91d";
+}
+
+.icon-star-empty:before {
+    @include icon();
+    content: "\e918";
+}
+
+.icon-star-outline:before {
+    @include icon();
+    content: "\e919";
+}
+
+.icon-star-third:before {
+    @include icon();
+    content: "\e91a";
+}
+
+.icon-star-half:before {
+    @include icon();
+    content: "\e91b";
+}
+
+.icon-star-two_thirds:before {
+    @include icon();
+    content: "\e91c";
+}
+
+.icon-no-star:before {
+    @include icon();
+    content: "\e924";
+}
+
+.icon-star-one_filled:before {
+    @include icon();
+    content: "\e925";
+}
+
+.icon-star-four_filled:before {
+    @include icon();
+    content: "\e928";
+}
+
+.icon-star-five_filled:before {
+    @include icon();
+    content: "\e929";
+}
+
+.icon-star-yellow-outline:before {
+    @include icon();
+    content: "\e930";
+}
+
+.icon-star-yellow-full:before {
+    @include icon();
+    content: "\e931";
+}
+
+.icon-star-empty_deprecated:before {
+    @include icon();
+    content: "\e90c";
+}
+
+.icon-star-full_deprecated:before {
+    @include icon();
+    content: "\e90d";
+}
+
+.icon-star-half_deprecated:before {
+    @include icon();
+    content: "\e90e";
+}
+
+.icon-Desktop:before {
+    @include icon();
+    content: '\e900';
+}
+
+.application-desktop:before {
+    @include icon();
+    content: "\e60a";
+}
+
+.application-mobile:before {
+    @include icon();
+    content: "\e60c";
+}
+
+.icon-Laptop:before {
+    @include icon();
+    content: "\e901";
+}
+
+.icon-Tablet:before {
+    @include icon();
+    content: "\e902";
+}
+
+.icon-Smartphone:before {
+    @include icon();
+    content: "\e903";
+}
+
+.icon-Virtual_App_Server:before {
+    @include icon();
+    content: "\e904";
+}
+
+.icon-Virtual_Desktop:before {
+    @include icon();
+    content: "\e905";
+}
+
+.icon-Hypervisor:before {
+    @include icon();
+    content: "\e906";
+}
+
+.icon-Remote_Device:before {
+    @include icon();
+    content: "\e907";
+}
+
+.icon-user-autocomplete:before {
+    @include icon();
+    content: "\e908";
+}
+
+.icon-Application:before {
+    @include icon();
+    content: "\e909";
+}
+
+.icon-location:before {
+    @include icon();
+    content: "\e917";
+}
+
+.icon-menu_icon:before {
+    @include icon();
+    content: "\e914";
+}
+
+.icon-Dashboards-Shared:before {
+    @include icon();
+    content: "\e935";
+}
+
+.icon-My-Dashboards:before {
+    @include icon();
+    content: "\e936";
+}
+
+.icon-menu_icon_old:before {
+    @include icon();
+    content: "\e90a";
+}
+
+.icon-save-as:before {
+    @include icon();
+    content: '\e90f';
+}
+
+.icon-browser_application:before {
+    @include icon();
+    content: '\e90b';
+}
+
+.dots:before {
+    @include icon();
+    content: "\e20f";
+}
+
+.lm-arrow-up:before {
+    @include icon();
+    content: "\e630";
+}
+
+.lm-arrow-down:before {
+    @include icon();
+    content: "\e631";
+}
+
+.lm-globus:before {
+    @include icon();
+    content: "\e632";
+}
+
+.lm-cloud-download:before {
+    @include icon();
+    content: "\e633";
+}
+
+.lm-cloud-upload:before {
+    @include icon();
+    content: "\e634";
+}
+
+.location-mapping-icon:before {
+    @include icon();
+    content: "\e635";
+}
+
+.icon_check:before {
+    @include icon();
+    content: "\e636";
+}
+
+.warning:before {
+    @include icon();
+    content: "\e637";
+}
+
+.lm-cloud-upload-outline:before {
+    @include icon();
+    content: "\e638";
+}
+
+.lm-drop-file:before {
+    @include icon();
+    content: "\e639";
+}
+
+.send:before {
+    @include icon();
+    content: "\e600";
+}
+
+.arrow-down:before {
+    @include icon();
+    content: "\e601";
+}
+
+.home:before {
+    @include icon();
+    content: "\e602";
+}
+
+.user:before {
+    @include icon();
+    content: "\e603";
+}
+
+.cog-wheel:before {
+    @include icon();
+    content: "\e604";
+}
+
+.info-ico:before {
+    @include icon();
+    content: "\e605";
+}
+
+.publish-icon:before {
+    @include icon();
+    content: "\e606";
+}
+
+.icon-search:before {
+    @include icon();
+    content: "\e607";
+}
+
+.sort-descending:before {
+    @include icon();
+    content: "\e608";
+}
+
+.sort-ascending:before {
+    @include icon();
+    content: "\e609";
+}
+
+.type-desktop:before {
+    @include icon();
+    content: "\e60a";
+}
+
+.type-web:before {
+    @include icon();
+    content: "\e60b";
+}
+
+.type-mobile:before {
+    @include icon();
+    content: "\e60c";
+}
+
+.loading:before {
+    @include icon();
+    content: "\e60d";
+}
+
+.rollout-all:before {
+    @include icon();
+    content: "\e60e";
+}
+
+.rollout-test:before {
+    @include icon();
+    content: "\e60f";
+}
+
+.rollout-mixed:before {
+    @include icon();
+    content: "\e610";
+}
+
+.pause:before {
+    @include icon();
+    content: "\e611";
+}
+
+.start:before {
+    @include icon();
+    content: "\e612";
+}
+
+.filter:before {
+    @include icon();
+    content: "\e613";
+}
+
+.stop:before {
+    @include icon();
+    content: "\e614";
+}
+
+.monitored-application:before {
+    @include icon();
+    content: "\e615";
+}
+
+.add-btn:before {
+    @include icon();
+    content: "\e616";
+}
+
+.more-info:before {
+    @include icon();
+    content: "\e617";
+}
+
+.tick:before {
+    @include icon();
+    content: "\e618";
+}
+
+.close-btn:before {
+    @include icon();
+    content: "\e619";
+}
+
+.arrow-left:before {
+    @include icon();
+    content: "\e61a";
+}
+
+.arrow-right:before {
+    @include icon();
+    content: "\e61b";
+}
+
+.sign:before {
+    @include icon();
+    content: "\e61c";
+}
+
+.circle-plus:before {
+    @include icon();
+    content: "\e61d";
+}
+
+.warning2:before {
+    @include icon();
+    content: "\e61e";
+}
+
+.edit-ico:before {
+    @include icon();
+    content: "\e61f";
+}
+
+.icon-chrome:before {
+    @include icon();
+    content: "\e620";
+}
+
+.icon-download:before {
+    @include icon();
+    content: "\e621";
+}
+
+.icon-ie:before {
+    @include icon();
+    content: "\e622";
+}
+
+.icon-mozila:before {
+    @include icon();
+    content: "\e623";
+}
+
+.icon-pencil:before {
+    @include icon();
+    content: "\e624";
+}
+
+.icon-question-mark:before {
+    @include icon();
+    content: "\e625";
+}
+
+.icon-upload:before {
+    @include icon();
+    content: "\e626";
+}
+
+.icon-wrench:before {
+    @include icon();
+    content: "\e627";
+}
+
+.icon-android:before {
+    @include icon();
+    content: "\e628";
+}
+
+.icon-apple:before {
+    @include icon();
+    content: "\e629";
+}
+
+.icon-cross-bold:before {
+    @include icon();
+    content: "\e62a";
+}
+
+.um-domain-user:before {
+    @include icon();
+    content: "\e62b";
+}
+
+.um-edit-user:before {
+    @include icon();
+    content: "\e62c";
+}
+
+.um-local-user:before {
+    @include icon();
+    content: "\e62d";
+}
+
+.um-lock:before {
+    @include icon();
+    content: "\e62e";
+}
+
+.um-user-management:before {
+    @include icon();
+    content: "\e62f";
+}
+
+.icon-Analyze:before {
+    @include icon();
+    content: "\e63a";
+}
+
+.icon-Discover:before {
+    @include icon();
+    content: "\e63b";
+}
+
+.icon-Dashboards:before {
+    @include icon();
+    content: "\e63b";
+}
+
+.icon-Inventory:before {
+    @include icon();
+    content: "\e63c";
+}
+
+.icon-Monitor:before {
+    @include icon();
+    content: "\e63d";
+}
+
+.icon-Reports:before {
+    @include icon();
+    content: "\e63e";
+}
+
+.icon-Troubleshoot:before {
+    @include icon();
+    content: "\e63f";
+}
+
+.icon-Validate:before {
+    @include icon();
+    content: "\e640";
+}
+
+.icon-delete:before {
+    @include icon();
+    content: "\e641";
+}
+
+.icon-edit:before {
+    @include icon();
+    content: "\e642";
+}
+
+.icon-endpoint:before {
+    @include icon();
+    content: "\e643";
+}
+
+.icon-help:before {
+    @include icon();
+    content: "\e644";
+}
+
+.icon-incidents:before {
+    @include icon();
+    content: "\e645";
+}
+
+.icon-menu:before {
+    @include icon();
+    content: "\e646";
+}
+
+.icon-popout:before {
+    @include icon();
+    content: "\e647";
+}
+
+.icon-user:before {
+    @include icon();
+    content: "\e648";
+}
+
+.icon-save:before {
+    @include icon();
+    content: "\e649";
+}
+
+.icon-search:before {
+    @include icon();
+    content: "\e64a";
+}
+
+.icon-homepage:before {
+    @include icon();
+    content: "\e64b";
+}
+
+.icon-settings:before {
+    @include icon();
+    content: "\e64c";
+}
+
+.icon-view:before {
+    @include icon();
+    content: "\e64d";
+}
+
+.icon-arrow-right2:before {
+    @include icon();
+    content: "\e68b";
+}
+
+.icon-down-arrow:before {
+    @include icon();
+    content: "\e910";
+}
+
+.icon-no-arrow:before {
+    @include icon();
+    content: "\e911";
+}
+
+.icon-up-arrow:before {
+    @include icon();
+    content: "\e912";
+}
+
+.checkbox_empty:before {
+    @include icon();
+    content: "\e926";
+}
+.checkbox_checked:before {
+    @include icon();
+    content: "\e927";
+}
+.attention:before {
+    @include icon();
+    content: "\e928";
+}
+.icomoon-refresh:before {
+    @include icon();
+    content: "\e929";
+}

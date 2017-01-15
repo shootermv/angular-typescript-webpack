@@ -1,0 +1,102 @@
+$dialogBorder: #ccc;
+$dialogPadding: 25px 40px;
+$aDialogColor: #3293c8;
+
+@mixin dialog() {//Shading background
+    @include vertical-align-parent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 300;
+    text-align: center;
+    line-height: 18px;
+    .closeBtn {
+        cursor: pointer;
+        position: absolute;
+        right: 40px;
+        top: 25px;
+        font-size: 12px;
+        line-height: 16px;
+        color: #676767;
+    }
+    > div {
+        @include vertical-align;
+        display: inline-block;
+        padding: $dialogPadding;
+        height: auto;
+        -webkit-box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.25);
+        font-size: 14px;
+        line-height: 18px;
+        background-color: #fff;
+        text-align: left;
+        margin: 0;
+        h1 {
+            font-weight: normal;
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 30px;
+        }
+
+        .content {
+            > div {
+                margin-bottom: 14px;
+                line-height: 24px;
+                overflow: auto;
+                max-width: 980px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .buttons {
+            height: 24px;
+        }
+        .right {
+            float: right;
+        }
+        .center {
+            text-align: center;
+        }
+        $commentFontSize: 12px;
+        .comment {
+            padding: $dialogPadding/2 $dialogPadding;
+            background-color: #f5f5f5;
+            border-top: 1px solid $dialogBorder;
+            color: #888;
+            margin: 0;
+            font-size: $commentFontSize;
+
+            div, span {
+                font-size: $commentFontSize;
+            }
+            a {
+                font-size: $commentFontSize;
+                color: $aDialogColor;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .content {
+        .header {
+            padding: 0 !important;
+            height: 30px;
+        }
+
+        .buttons {
+            display: block;
+            text-align: center;
+            button {
+                width: 80px;
+            }
+        }
+    }
+}

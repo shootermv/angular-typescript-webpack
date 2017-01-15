@@ -1,0 +1,17 @@
+<div ng-if="$ctrl.showTestGroup" class="bulkRollout">
+ <div ng-click="$event.stopPropagation();">
+  <header>
+   <h1>Test Group</h1>
+   <i class="closeBtn clickable close-btn" ng-click="$ctrl.closeDialog()" title="Close"></i>
+  </header>
+  <div class="content">
+   <div>
+    here will come test group component!!!
+   </div>
+  </div>
+  <div class="bulkRolloutButtons">
+   <button ng-click_="$ctrl.closeDialog()" class="cancelBtn">Cancel</button>
+   <button _ng-click_="$ctrl.rolloutItem.confirm()" class="goBtn">Apply</button>
+  </div>
+ </div>
+</div>
