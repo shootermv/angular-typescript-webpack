@@ -11,6 +11,7 @@
             </div>
             <div class="rightHeaderContainer">
                 <add-application-menu show-context-item="$ctrl.showAddApplicationMenu"></add-application-menu>
+                <button ng-click="$ctrl.showTestGroup=true">Test Group</button>
             </div>
         </div>
 
@@ -49,5 +50,5 @@
         </table>
                 
    </section>
-   <test-group show-test-group="true"></test-group>
+   <test-group show-test-group="$ctrl.showTestGroup"></test-group>
 </div>

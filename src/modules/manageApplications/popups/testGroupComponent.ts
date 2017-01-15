@@ -1,12 +1,13 @@
 
+class Ctrl {
+   public showTestGroup:boolean;  
+   closeDialog() {
+            this.showTestGroup = false;
+    }
+};
 export class TestGroup implements ng.IComponentOptions {
     public template:string = require('./testGroupComponent.html');
-    public controller:any  = class Ctrl {
-        public showTestGroup:boolean;  
-        closeDialog() {
-            this.showTestGroup = false;
-        }
-    };
+    public controller:any  = Ctrl;
     public bindings:{[key:string]:string} = {
         showTestGroup: '='
     };
