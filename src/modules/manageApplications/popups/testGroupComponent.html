@@ -48,8 +48,8 @@
 
 
                     <div class="arrows">                   
-                          <button class="icon arrow-right"></button>
-                          <button class="icon arrow-left"></button>                         
+                          <button class="icon arrow-right" ng-click="$ctrl.moveToSaved()"></button>
+                          <button class="icon arrow-left"  ng-click="$ctrl.moveToActive()"></button>                         
                     </div>
 
 
@@ -57,11 +57,11 @@
                         <div class="item-list">
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="item in monitorTable.activeList.toSaveValues | filter:monitorTable.autocomplete.toSaveValuesLetter | orderBy:'value' track by $index"
+                                <tr ng-repeat="item in $ctrl.toSaved | orderBy:'value' track by $index"
                                     ng-click="item.$selected=!item.$selected;"
                                     ng-class="{'active': item.$selected}">
                                     <td class="text-left">
-                                        <a href="#">{{item.value}}</a>
+                                        <a href="">{{item.value}}</a>
                                     </td>
                                 </tr>
                                 </tbody>
