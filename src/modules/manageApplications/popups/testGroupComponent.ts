@@ -3,14 +3,12 @@ class Ctrl {
    public showTestGroup:boolean;  
    public static $inject:string[] = ['manageApplicationsService'];
    public activeValues:any;
-   constructor(public manageApplicationsService:ManageApplicationsService){
-
-   }
+   constructor(public manageApplicationsService:ManageApplicationsService){}
 
    $onInit() {
       this.manageApplicationsService.findBySearchCriteria()
       .then((response:any) => {
-        this.activeValues = response.data.values.slice(0,5);
+        this.activeValues = response.data.values;
       });
    }
 

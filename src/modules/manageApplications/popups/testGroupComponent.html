@@ -6,38 +6,32 @@
   </header>
   <div class="content">
    
-      <h3>Select the members of the Test Group from one of the categories:</h3>
+     <h3>Select the members of the Test Group from one of the categories:</h3>
 
     <form class="monitor-form" ng-submit="$ctrl.handleTestGroupFormSubmit()">
-       
-            <div class="form-row">
+            <section class="form-row">
                 <h3>List members by</h3>
-
-              
                 <label  ng-repeat="(key,val) in {0:'Hostname',1:'Username',2:'Business Location'} track by $index">         
                         <input name="name" type="radio"  value="{{key}}">                             
                         <span class="fake-label">{{val}}</span>             
                 </label>
-              
-            </div>
-
-            <section class="search-wrap">
-                    <div class="left-part">
-                        <div class="form-group has-feedback">
-                            <input class="form-control" ng-model="monitorTable.autocomplete.letter" id="searchLeft"
-                                   type="search" placeholder="{{monitorTable.getTestGroupPlaceholder()}}"
-                                   ng-keyup="monitorTable.autocomplete.findBySearchCriteria($event)">
-                            <span class="icon search form-control-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="right-part">
-                        <span class="total">Test group members:<span>{{monitorTable.activeList.toSaveValues.length}}</span></span>
-                    </div>               
-
             </section>
 
+            <section class="search-wrap">
+                <div class="left-part">
+                    <div class="form-group has-feedback">
+                        <input class="form-control" ng-model="monitorTable.autocomplete.letter" id="searchLeft"
+                                type="search" placeholder="{{monitorTable.getTestGroupPlaceholder()}}"
+                                ng-keyup="monitorTable.autocomplete.findBySearchCriteria($event)">
+                        <span class="icon search form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <span class="total">Test group members:<span>{{monitorTable.activeList.toSaveValues.length}}</span></span>
+                </div>
+            </section>
 
-            <div class="selection">
+            <section class="selection">
                     <div class="left-part">
                         <div class="item-list">
                             <table class="table">
@@ -51,16 +45,13 @@
                             </table>
                         </div>
                     </div>
-                    <div class="arrows">
-                        <div ng-init="monitorTable.lock.canEdit">
-                            <a href="#" ng-click="monitorTable.listActions.moveToSaveList()"
-                               ng-disabled="!monitorTable.lock.canEdit"><span class="icon arrow-right"></span></a>
-                        </div>
-                        <div>
-                            <a href="#" ng-click="monitorTable.listActions.removeFromSaveList()"
-                               ng-disabled="!monitorTable.lock.canEdit"><span class="icon arrow-left"></span></a>
-                        </div>
+
+
+                    <div class="arrows">                   
+                          <button class="icon arrow-right"></button>
+                          <button class="icon arrow-left"></button>                         
                     </div>
+
 
                     <div class="right-part">
                         <div class="item-list">
@@ -77,7 +68,9 @@
                             </table>
                         </div>
                     </div>
-                </div>
+
+
+                </section>
     </form>
 
   
