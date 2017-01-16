@@ -39,7 +39,7 @@
                                 <tr ng-repeat="item in $ctrl.activeValues | orderBy:'value' track by $index"
                                     ng-click="item.$selected=!item.$selected;"
                                     ng-class="{'active': item.$selected}">
-                                    <td><a href="#">{{item}}</a></td>
+                                    <td><a href="">{{item.value}}</a></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -9,19 +9,23 @@ class Ctrl {
 
 
    $onInit() {
-      this.manageApplicationsService.findBySearchCriteria()
-      .then((response:any) => {
-        this.activeValues = response.data.values;
-      });
+      this.byParamChanged(14);
    }
 
    closeDialog() {
        this.showTestGroup = false;
    }
 
-   byParamChanged(val) {
-        
+   byParamChanged(val) {      
+       this.manageApplicationsService.findBySearchCriteria(val)
+      .then((response:any) => {
+        this.activeValues = response.data.values.map(val=>{
+            let obj = {value:val, $selected : false};
+            return obj;
+        });     
+      });       
    }
+
 };
 export class TestGroup implements ng.IComponentOptions {
     public template:string = require('./testGroupComponent.html');
