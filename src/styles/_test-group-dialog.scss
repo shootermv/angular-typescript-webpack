@@ -61,6 +61,20 @@
             border:1px solid green;
             flex:1;
         }
-    }   
-
+    }
+       
+    footer{
+        padding:10px;
+        text-align:right;
+        button{
+            padding:7px;
+        }
+        .btn-success {
+            background: #2B3D4F;
+            color: #fff;
+            border: 0;
+            border-radius: 0;
+            margin: 0;
+        }
+    }
 }
