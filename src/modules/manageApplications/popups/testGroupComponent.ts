@@ -3,7 +3,10 @@ class Ctrl {
    public showTestGroup:boolean;  
    public static $inject:string[] = ['manageApplicationsService'];
    public activeValues:any;
+   public byParam:any = '14';
+   public dataList:Object = {14:'Hostname',1:'Username',18:'Business Location'};
    constructor(public manageApplicationsService:ManageApplicationsService){}
+
 
    $onInit() {
       this.manageApplicationsService.findBySearchCriteria()
@@ -14,7 +17,11 @@ class Ctrl {
 
    closeDialog() {
        this.showTestGroup = false;
-    }
+   }
+
+   byParamChanged(val) {
+        
+   }
 };
 export class TestGroup implements ng.IComponentOptions {
     public template:string = require('./testGroupComponent.html');

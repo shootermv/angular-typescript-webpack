@@ -11,8 +11,8 @@
     <form class="monitor-form" ng-submit="$ctrl.handleTestGroupFormSubmit()">
             <section class="form-row">
                 <h3>List members by</h3>
-                <label  ng-repeat="(key,val) in {0:'Hostname',1:'Username',2:'Business Location'} track by $index">         
-                        <input name="name" type="radio"  value="{{key}}">                             
+                <label  ng-repeat="(key,val) in $ctrl.dataList track by $index">         
+                        <input name="name" type="radio" ng-model="$ctrl.byParam"  value="{{key}}" ng-change="$ctrl.byParamChanged(key)">                             
                         <span class="fake-label">{{val}}</span>             
                 </label>
             </section>
