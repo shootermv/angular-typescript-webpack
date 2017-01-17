@@ -1,4 +1,4 @@
-import {ManageApplicationsService} from './../manageApplicationsService'
+import {ManageApplicationsService} from './../../manageApplicationsService'
 class Ctrl {
    public showTestGroup:boolean;  
    public static $inject:string[] = ['manageApplicationsService'];
