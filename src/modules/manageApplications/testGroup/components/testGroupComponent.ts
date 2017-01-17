@@ -60,7 +60,9 @@ class Ctrl {
           this.criterion.staticAttrId,
           this.toSaved.map(item => item.value)
       );
-      this.testGroupService.saveTestGroup(1, criterionData, this.testGroupVersion);
+      this.testGroupService.saveTestGroup(1, criterionData, this.testGroupVersion).then(()=>{
+          this.showTestGroup = false;
+      });
    }
    
 };
