@@ -17,6 +17,7 @@
                 </label>
             </section>
 
+
             <section class="search-wrap">
                 <div class="left-part">
                     <div class="form-group has-feedback">
@@ -30,6 +31,7 @@
                     <span class="total">Test group members:<span>{{monitorTable.activeList.toSaveValues.length}}</span></span>
                 </div>
             </section>
+
 
             <section class="selection">
                     <div class="left-part">
@@ -78,7 +80,7 @@
 
   <footer>
      <button ng-click_="$ctrl.closeDialog()" class="cancelBtn">Cancel</button>
-     <button _ng-click_="$ctrl.rolloutItem.confirm()" class="btn-success">Apply</button>
+     <button ng-click="$ctrl.saveTestGroup()" class="btn-success">Apply</button>
   </footer>
 
  </div>
