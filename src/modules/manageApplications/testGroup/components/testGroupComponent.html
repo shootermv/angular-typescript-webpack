@@ -12,7 +12,7 @@
             <section class="form-row">
                 <h3>List members by</h3>
                 <label  ng-repeat="(key,val) in $ctrl.dataList track by $index">         
-                        <input name="name" type="radio" ng-model="$ctrl.byParam"  value="{{key}}" ng-change="$ctrl.byParamChanged(key)">                             
+                        <input name="name" type="radio" ng-model="$ctrl.criterion.staticAttrId"  value="{{key}}" ng-change="$ctrl.byParamChanged(key)">                             
                         <span class="fake-label">{{val}}</span>             
                 </label>
             </section>

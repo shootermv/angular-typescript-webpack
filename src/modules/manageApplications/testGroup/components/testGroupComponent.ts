@@ -9,18 +9,16 @@ class Ctrl {
    public testGroupVersion:number;
    public dataList:Object = {14:'Hostname',1:'Username',18:'Business Location'};
    public criterion:Criterion;
-   public criterionData:Object; 
 
    constructor(public testGroupService:TestGroupService){}
    
    $onInit() {
-
+   
      this.testGroupService.loadAccountTestGroup(1)
      .then((response)=>{
-
-        this.testGroupVersion = response.data.version; 
-        this.criterion =  new Criterion(response.data.staticAttrCriterionDTOList[0].staticAttrId, response.data.staticAttrCriterionDTOList[0].criterionValues);
-        this.byParamChanged(response.data.staticAttrCriterionDTOList[0].staticAttrId);
+        this.testGroupVersion = response.version; 
+        this.criterion =  response.criterion;
+        this.byParamChanged(this.criterion.staticAttrId);
         this.toSaved = this.criterion.criterionValues.map(val=>{
            return {value:val, $selected : false};
         })
@@ -28,11 +26,11 @@ class Ctrl {
       
    }
 
-   closeDialog() {
+   public closeDialog() {
        this.showTestGroup = false;
    }
 
-   byParamChanged(val) {    
+   public byParamChanged(val) {    
        this.testGroupService.findBySearchCriteria(val)
       .then((response:any) => {
         this.activeValues = response.data.values.map(val=>{
@@ -42,28 +40,27 @@ class Ctrl {
       });       
    }
 
-   move(orig, current) {
+   private move(orig, current) {
       orig.filter(b=>b.$selected).forEach(item=>{
           current.unshift(item);
           orig.splice(orig.indexOf(item),1);
       }) 
    }
 
-
-   moveToSaved() {
+   public moveToSaved() {
       this.move(this.activeValues, this.toSaved)      
    }
 
-   moveToActive() {
+   public moveToActive() {
      this.move(this.toSaved, this.activeValues)   
    }
 
-   saveTestGroup() {
-      this.criterionData= {
-          staticAttrId: this.byParam,
-          criterionValues:this.toSaved.map(item => item.value)
-      };
-      this.testGroupService.saveTestGroup(1, this.criterionData, this.testGroupVersion);
+   public saveTestGroup() {
+      let criterionData = new Criterion(
+          this.criterion.staticAttrId,
+          this.toSaved.map(item => item.value)
+      );
+      this.testGroupService.saveTestGroup(1, criterionData, this.testGroupVersion);
    }
    
 };
