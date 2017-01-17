@@ -1,4 +1,5 @@
-import {TestGroupService} from './../core/services/testGroupService'
+import {TestGroupService} from './../core/services/testGroupService';
+import {Criterion} from './../core/entities/criterion';
 class Ctrl {
    public showTestGroup:boolean;  
    public static $inject:string[] = ['testGroupService'];
@@ -7,17 +8,10 @@ class Ctrl {
    public byParam:any = '14';
    public testGroupVersion:number;
    public dataList:Object = {14:'Hostname',1:'Username',18:'Business Location'};
-
-   private criterion:Object = {
-        "staticAttrId": 0,
-        "criterionValues": []
-    }
-
-
-
+   public criterion:Criterion;
+   public criterionData:Object; 
 
    constructor(public testGroupService:TestGroupService){}
-
    
    $onInit() {
 
@@ -25,15 +19,12 @@ class Ctrl {
      .then((response)=>{
 
         this.testGroupVersion = response.data.version; 
+        this.criterion =  new Criterion(response.data.staticAttrCriterionDTOList[0].staticAttrId, response.data.staticAttrCriterionDTOList[0].criterionValues);
         this.byParamChanged(response.data.staticAttrCriterionDTOList[0].staticAttrId);
-
-        this.toSaved = response.data.staticAttrCriterionDTOList[0].criterionValues.map(val=>{
+        this.toSaved = this.criterion.criterionValues.map(val=>{
            return {value:val, $selected : false};
         })
-     })
-
-
-
+     });
       
    }
 
@@ -68,9 +59,11 @@ class Ctrl {
    }
 
    saveTestGroup() {
-      this.criterion["staticAttrId"] = this.byParam;
-      this.criterion["criterionValues"] = this.toSaved.map(item => item.value)
-      this.testGroupService.saveTestGroup(1, this.criterion, this.testGroupVersion);
+      this.criterionData= {
+          staticAttrId: this.byParam,
+          criterionValues:this.toSaved.map(item => item.value)
+      };
+      this.testGroupService.saveTestGroup(1, this.criterionData, this.testGroupVersion);
    }
    
 };
