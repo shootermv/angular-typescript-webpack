@@ -5,10 +5,7 @@ import IQService = angular.IQService;
 
 
 export class TestGroupService {
-
-
     static $inject:string[] = ["$http", "$q"];
-
     constructor(private $http:IHttpService, private $q:IQService) {}
     
     public findBySearchCriteria(saId):IPromise<any>{

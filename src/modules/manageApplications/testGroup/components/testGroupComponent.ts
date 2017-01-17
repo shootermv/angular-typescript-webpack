@@ -1,14 +1,14 @@
-import {ManageApplicationsService} from './../../manageApplicationsService'
+import {TestGroupService} from './../core/services/testGroupService'
 class Ctrl {
    public showTestGroup:boolean;  
-   public static $inject:string[] = ['manageApplicationsService'];
+   public static $inject:string[] = ['testGroupService'];
    public activeValues:any[] = [];
    public toSaved:any[] = [];
    public byParam:any = '14';
    public dataList:Object = {14:'Hostname',1:'Username',18:'Business Location'};
-   constructor(public manageApplicationsService:ManageApplicationsService){}
+   constructor(public testGroupService:TestGroupService){}
 
-
+   
    $onInit() {
       this.byParamChanged(14);
    }
@@ -18,7 +18,7 @@ class Ctrl {
    }
 
    byParamChanged(val) {      
-       this.manageApplicationsService.findBySearchCriteria(val)
+       this.testGroupService.findBySearchCriteria(val)
       .then((response:any) => {
         this.activeValues = response.data.values.map(val=>{
             let obj = {value:val, $selected : false};
