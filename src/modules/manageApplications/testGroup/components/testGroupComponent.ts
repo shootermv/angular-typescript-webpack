@@ -22,8 +22,7 @@ class Ctrl {
         this.toSaved = this.criterion.criterionValues.map(val=>{
            return {value:val, $selected : false};
         })
-     });
-      
+     });  
    }
 
    public closeDialog() {
