@@ -70,7 +70,7 @@ class Ctrl {
    saveTestGroup() {
       this.criterion["staticAttrId"] = this.byParam;
       this.criterion["criterionValues"] = this.toSaved.map(item => item.value)
-      this.testGroupService.saveTestGroup(1, this.criterion, 0)
+      this.testGroupService.saveTestGroup(1, this.criterion, this.testGroupVersion);
    }
    
 };
