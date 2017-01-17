@@ -13,7 +13,6 @@ class Ctrl {
    constructor(public testGroupService:TestGroupService){}
    
    $onInit() {
-   
      this.testGroupService.loadAccountTestGroup(1)
      .then((response)=>{
         this.testGroupVersion = response.version; 
