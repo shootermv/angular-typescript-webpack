@@ -5,7 +5,7 @@ var proxyMiddleware = require('http-proxy-middleware');
 
 var prxy = proxyMiddleware('/api', {    
     target: 'http://172.16.40.141/',
-    headers:{'cookie':'JSESSIONID=0D1FB0442520DEBE7762FE6D7D2A350C; domainId=Local; username=Administrator'}    //<==passing session cookies to proxy req
+    headers:{'cookie':'JSESSIONID=SECRET; domainId=Local; username=Administrator'}    //<==passing session cookies to proxy req
 })
 
 
